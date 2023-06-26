@@ -63,7 +63,7 @@ export default function Results() {
             <span className='text-emerald-600 text-sm font-semibold md:text-base lg:bg-orange-400 lg:rounded-full lg:p-2 lg:text-white'  >{ (Number(datos.enCuotas) / Number(datos.contado)).toFixed(2) + ' %'}</span>
           </div>
           <div className=' p-2 h-16 rounded gap-2 justify-center flex flex-col w-32 text-xs border-2 md:text-sm md:w-48 border-teal-400 md:border-4 md:h-20 lg:h-28 lg:text-center  lg:border-4 lg:rounded-xl lg:p-4 lg:w-64 '>
-            <h5 className='lg:font-semibold lg:text-sm'>Inflación mensual estimada</h5>
+            <h5 className='lg:font-semibold lg:text-sm'>Inflación mensual <small>estimada</small></h5>
             <span className='text-emerald-600 text-sm font-semibold md:text-base lg:bg-orange-400 lg:rounded-full lg:p-2 lg:text-white'  >{ datos.ipc + ' %'}</span>
           </div>
         </div>
