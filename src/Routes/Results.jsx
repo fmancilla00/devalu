@@ -33,58 +33,77 @@ export default function Results() {
     }
     , [datos])
     return (
-      <div  className=' w-full relative  container mx-auto bg-neutral-50 min-h-screen md:font-medium lg:rounded lg:mt-5 lg:border-8 lg:border-white lg:flex lg:flex-col lg:justify-center lg:items-center'>
-        <h2 className=' w-[100%] p-8 px-2 text-center text-base bg-teal-600 font-semibold text-neutral-50 flex items-center justify-center md:text-2xl lg:w-[95%] lg:mt-8 lg:rounded lg:text-2xl'>{texto} </h2>
-        <div className='lg:m-5'>
-        {!datos.variacion
-          ? <p className='text-xs m-1 p-3 pb-0 mb-0 md:text-sm'>Los siguientes cálculos ser realizaron suponiendo que la inflación mensual se mantiene  <b className='text-emerald-600'>constante</b></p>
-          : <p className='text-xs m-1 p-3 pb-0 mb-0 md:text-sm'>Los siguientes cálculos ser realizaron con una inflación <b className='text-emerald-600'>variable</b> estimada del  <b className=' text-emerald-600'>{datos.variacion}</b>   % mensual.</p>
-        }  
-        </div>
-        <div className='m-4 gap-6 flex flex-wrap items-center justify-around'>
-          <div className=' p-2 h-16 rounded gap-2 justify-center flex flex-col w-32 text-xs border-2 md:text-cs md:w-48 border-teal-400 md:border-4 md:h-20 lg:h-28 lg:text-center lg:rounded-xl lg:p-4 lg:w-64'>
-            <h5 className='lg:font-semibold lg:text-sm'>Precio al contado</h5>
-            <span className='text-emerald-600 text-sm font-semibold md:text-base lg:bg-orange-400 lg:rounded-full lg:p-2 lg:text-white'  >{'$ ' + Number(datos.contado).toFixed(2)}</span>
+      <div className=' w-full lg:w-[80%] mx-auto relative flex items-center justify-center bg-neutral-50 min-h-screen md:font-medium lg:my-10 lg:p-10 lg:px-20 lg:rounded'>
+        <div className='p-5 flex flex-col items-center w-full'>
+
+          <h2 className='bg-teal-100 text-center w-full p-2 text-base sm:font-bold h-24 rounded sm:text-lg md:text-xl flex items-center justify-center lg:text-2xl'>{texto} </h2>
+          <div className='font-normal my-5'>
+          {!datos.variacion
+            ? <p className='text-xs  pb-0 mb-0 md:text-sm'>Los siguientes cálculos ser realizaron suponiendo que la inflación mensual se mantiene  <b className='text-emerald-600'>constante.</b></p>
+            : <p className='text-xs  p-3 pb-0 mb-0 md:text-sm'>Los siguientes cálculos ser realizaron con una inflación <b className='text-emerald-600'>variable</b> estimada del  <b className=' text-emerald-600'>{datos.variacion}</b>   % mensual.</p>
+          }  
           </div>
-          <div className=' p-2 h-16 rounded gap-2 justify-center flex flex-col w-32 text-xs border-2 md:text-sm md:w-48 border-teal-400 md:border-4 md:h-20 lg:h-28 lg:text-center  lg:border-4 lg:rounded-xl lg:p-4 lg:w-64'>
-            <h5 className='lg:font-semibold lg:text-sm'>Precio en cuotas</h5>
-            <span className='text-emerald-600 text-sm font-semibold md:text-base lg:bg-orange-400 lg:rounded-full lg:p-2 lg:text-white'  >{'$ ' + Number(datos.enCuotas).toFixed(2)}</span>
-          </div>
-          <div className=' p-2 h-16 rounded gap-2 justify-center flex flex-col w-32 text-xs border-2 md:text-sm md:w-48 border-teal-400 md:border-4 md:h-20 lg:h-28 lg:text-center  lg:border-4 lg:rounded-xl lg:p-4 lg:w-64'>
-            <h5 className='lg:font-semibold lg:text-sm'>Precio ajustado a la inflación</h5>
-            <span className='text-emerald-600 text-sm font-semibold md:text-base lg:bg-orange-400 lg:rounded-full lg:p-2 lg:text-white'  >{'$ ' + ajustado.toFixed(2)}</span>
-          </div>
-          <div className='p-2 h-16 rounded gap-2 justify-center flex flex-col w-32 text-xs border-2 md:text-sm md:w-48 border-teal-400 md:border-4 md:h-20 lg:h-28 lg:text-center  lg:border-4 lg:rounded-xl lg:p-4 lg:w-64'>
-            <h5 className='lg:font-semibold lg:text-sm'>Diferencia <small>entre ajustado y contado</small></h5>
-            <span className='text-emerald-600 text-sm font-semibold md:text-base lg:bg-orange-400 lg:rounded-full lg:p-2 lg:text-white'  >{'$ ' + (Number(datos.enCuotas) - Number(datos.contado)).toFixed(2)}</span>
-          </div>
-          <div className=' p-2 h-16 rounded gap-2 justify-center flex flex-col w-32 text-xs border-2 md:text-sm md:w-48 border-teal-400 md:border-4 md:h-20 lg:h-28 lg:text-center  lg:border-4 lg:rounded-xl lg:p-4 lg:w-64'>
-            <h5 className='lg:font-semibold lg:text-sm'>Tasa de recargo</h5>
-            <span className='text-emerald-600 text-sm font-semibold md:text-base lg:bg-orange-400 lg:rounded-full lg:p-2 lg:text-white'  >{ (Number(datos.enCuotas) / Number(datos.contado)).toFixed(2) + ' %'}</span>
-          </div>
-          <div className=' p-2 h-16 rounded gap-2 justify-center flex flex-col w-32 text-xs border-2 md:text-sm md:w-48 border-teal-400 md:border-4 md:h-20 lg:h-28 lg:text-center  lg:border-4 lg:rounded-xl lg:p-4 lg:w-64 '>
-            <h5 className='lg:font-semibold lg:text-sm'>Inflación mensual <small>estimada</small></h5>
-            <span className='text-emerald-600 text-sm font-semibold md:text-base lg:bg-orange-400 lg:rounded-full lg:p-2 lg:text-white'  >{ datos.ipc + ' %'}</span>
-          </div>
-        </div>
-        <section className='text-xs m-4 mt-10 md:text-sm'>
-          <p>Acá podes ver el valor ajustado para cada cuota: </p>
-        </section>
-        <div className='text-xs flex flex-wrap gap-5 items-center justify-around m-4 md:justify-start lg:justify-center lg:text-sm'>
-          {cuotasArr.map((cuota, index) => { 
-            return (
-              
-            <div key={index} className='p-1 w-28 h-12 flex flex-col border-2 border-teal-400 rounded md:w-36 md:border-4  md:h-14 lg:w-52 lg:h-20 lg:items-center lg:justify-center'>
-              <h6>{'Cuota ' + (index + 1)}</h6>
-              <span className=' text-sm font-semibold text-emerald-600'>{'$ ' + cuota.toFixed(2)}</span>
+          <div className='border-2 py-2 p-5 border-teal-400 rounded my-4 relative flex flex-col items-center justify-around w-full'>
+            <span className='absolute text-teal-700 bg-neutral-50 px-1 -top-2 left-5 text-[12px] text-center'>Datos ingresados</span>
+            <div className='flex flex-col lg:gap-10 lg:flex-row lg:justify-between w-full'>
+              <div className=' p-2 h-16 gap-2 justify-between items-center flex w-full border-b-2 text-xs lg:h-12 sm:font-semibold'>
+                <h5 className='w-[50%]'>Precio al contado</h5>
+                <span className='text-emerald-600 font-semibold md:font-bold w-[50%] h-34 text-end'>{'$ ' + Number(datos.contado).toFixed(2)}</span>
+              </div>
+              <div className=' p-2 h-16 gap-2 justify-between items-center flex w-full border-b-2 text-xs lg:h-12 sm:font-semibold'>
+                <h5 className='w-[50%]'>Precio en cuotas</h5>
+                <span className='text-emerald-600 font-semibold md:font-bold w-[50%] h-34 text-end'  >{'$ ' + Number(datos.enCuotas).toFixed(2)}</span>
+              </div>
             </div>
-            )
-          })}
+            
+            <div className='flex flex-col lg:gap-10 lg:flex-row lg:justify-between w-full'>
+              <div className=' p-2 h-16 gap-2 justify-between items-center flex w-full border-b-2 text-xs lg:h-12 sm:font-semibold lg:border-none'>
+                <h5 className='w-[50%]'>Cantidad de cuotas</h5>
+                <span className='text-emerald-600 font-semibold md:font-bold w-[50%] h-34 text-end'  >{'# ' + datos.cuotas}</span>
+              </div>
+              <div className=' p-2 h-16 gap-2 justify-between items-center flex w-full  text-xs lg:h-12 sm:font-semibold'>
+                <h5 className='w-[70%]'>Inflación mensual <small>estimada</small></h5>
+                <span className='text-emerald-600 font-semibold md:font-bold w-[30%] h-34 text-end'  >{ datos.ipc + ' %'}</span>
+              </div>
+            </div>
+            </div>
+
+            <div className='border-2 py-2 p-5 border-teal-400 rounded my-4 relative flex flex-col items-center justify-around w-full'>
+              <span className='text-teal-700 absolute bg-neutral-50 px-1 -top-2 left-5 text-[12px] text-center'>Datos calculados</span>
+              <div className=' p-2 h-16 gap-2 justify-between items-center flex w-full border-b-2 text-xs lg:h-12 sm:font-semibold'>
+                <h5 className='w-[50%]'>Precio ajustado a la inflación</h5>
+                <span className='text-emerald-600 font-semibold md:font-bold w-[50%] h-34 text-end'  >{'$ ' + ajustado.toFixed(2)}</span>
+            </div>
+            <div className='flex flex-col lg:flex-row w-full lg:gap-10'>
+              <div className=' p-2 h-16 gap-2 justify-between items-center flex w-full border-b-2 text-xs lg:h-12 sm:font-semibold'>
+                  <h5 className='w-[50%]'>Tasa de recargo</h5>
+                  <span className='text-emerald-600 font-semibold md:font-bold w-[50%] h-34 text-end'  >{ (Number(datos.enCuotas) / Number(datos.contado) * 100).toFixed(2) + ' %'}</span>
+              </div>
+              <div className=' p-2 h-16 gap-2 justify-between items-center flex w-full border-b-2 text-xs lg:h-12 sm:font-semibold'>
+                <h5 className='w-[50%]'>Diferencia <small>entre ajustado y contado</small></h5>
+                <span className='text-emerald-600 font-semibold md:font-bold w-[50%] h-34 text-end'  >{'$ ' + (Number(datos.enCuotas) - Number(datos.contado)).toFixed(2)}</span>
+              </div>
+            </div>
+              <div className=' p-2  justify-between items-center flex flex-col w-full text-xs sm:font-semibold'>
+                <h5 className='w-full text-start'>Cuotas mes a mes:</h5>
+                <div className='text-xs flex flex-wrap gap-5 items-center justify-around m-4 lg:justify-start'>
+                  {cuotasArr.map((cuota, index) => { 
+                    return (
+                      
+                    <div key={index} className=' text-center p-1 w-24 h-12 flex flex-col justify-center items-center border-2 text-xs border-teal-400 rounded md:w-28 md:h-14'>
+                      <h6>{'Cuota ' + (index + 1)}</h6>
+                      <span className=' md:text-sm  font-semibold text-emerald-600'>{'$ ' + cuota.toFixed(2)}</span>
+                    </div>
+                    )
+                  })}
+                </div>
+              </div>
+            </div>
+          <footer className='flex flex-col items-center justify-center'>
+            <Link className=' flex items-center justify-center gap-2 rounded p-2 w-[50%] text-center mt-10 hover:bg-teal-800 transition bg-teal-700 text-sm text-white font-bold tracking-widest uppercase lg:w-[100%]' to="/"><IoCaretBackOutline/> Volver</Link>
+            <Link to='/explicacion' className='m-5 mb-0 text-sm underline underline-offset-4 hover:font-medium transition'>¿Cómo funciona?</Link>
+          </footer>
         </div>
-        <footer className='flex flex-col items-center justify-center'>
-          <Link className=' flex items-center justify-center gap-2 rounded p-2 w-[50%] text-center mt-2 hover:bg-teal-800 transition bg-teal-700 text-sm text-white font-bold tracking-widest uppercase lg:w-[100%]' to="/"><IoCaretBackOutline/> Volver</Link>
-          <Link to='/explicacion' className='m-5 text-sm underline underline-offset-4 hover:font-medium transition'>¿Cómo funciona?</Link>
-        </footer>
       </div>
           )
       }

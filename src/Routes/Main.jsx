@@ -10,7 +10,7 @@ export default function Main() {
   const { variacion, IPC, loading, error } = useFetch(url)
   const defaultVal = { valor: 0.078, fechaFormateada: 'Mayo 2023' }
   return (
-    <div className='flex items-center justify-center w-screen h-screen'>
+    <div className='flex items-center justify-center  w-screen h-screen'>
       <div className='drop-shadow-2xl text-teal-950 container bg-neutral-50 mx-auto min-h-screen p-2 flex flex-col items-center justify-evenly lg:justify-around lg:min-h-fit lg:my-10 lg:rounded w-screen lg:p-10 lg:w-[100%] '>
         <section className=' bg-teal-100 rounded-lg flex items-center justify-between gap-5 text-xs lg:text-base px-5 font-medium mt-20  w-72  lg:mt-0 lg:w-[60%] xl:w-[46%] lg:p-5'>
           <img src={logo} alt="" className='w-20 h-20 rounded-full border-4 border-teal-700 lg:w-28 lg:h-28' />
