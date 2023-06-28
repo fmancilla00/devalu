@@ -81,7 +81,7 @@ export default function Results() {
               </div>
               <div className=' p-2 h-16 gap-2 justify-between items-center flex w-full border-b-2 text-xs lg:h-12 sm:font-semibold'>
                 <h5 className='w-[50%]'>Diferencia <small>entre ajustado y contado</small></h5>
-                <span className='text-emerald-600 font-semibold md:font-bold w-[50%] h-34 text-end'  >{'$ ' + (Number(datos.enCuotas) - Number(datos.contado)).toFixed(2)}</span>
+                <span className='text-emerald-600 font-semibold md:font-bold w-[50%] h-34 text-end'  >{'$ ' + (Math.abs(ajustado - Number(datos.contado))).toFixed(2)}</span>
               </div>
             </div>
               <div className=' p-2  justify-between items-center flex flex-col w-full text-xs sm:font-semibold'>
@@ -100,7 +100,7 @@ export default function Results() {
               </div>
             </div>
           <footer className='flex flex-col items-center justify-center'>
-            <Link className=' flex items-center justify-center gap-2 rounded p-2 w-[50%] text-center mt-10 hover:bg-teal-800 transition bg-teal-700 text-sm text-white font-bold tracking-widest uppercase lg:w-[100%]' to="/"><IoCaretBackOutline/> Volver</Link>
+            <Link className=' flex items-center justify-center gap-2 rounded p-2 w-full text-center mt-10 hover:bg-teal-800 transition bg-teal-700 text-sm text-white font-bold tracking-widest uppercase' to="/"><IoCaretBackOutline/> Volver</Link>
             <Link to='/explicacion' className='m-5 mb-0 text-sm underline underline-offset-4 hover:font-medium transition'>¿Cómo funciona?</Link>
           </footer>
         </div>
