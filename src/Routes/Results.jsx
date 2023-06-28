@@ -36,7 +36,7 @@ export default function Results() {
       <div className=' w-full lg:w-[80%] mx-auto relative flex items-center justify-center bg-neutral-50 min-h-screen md:font-medium lg:my-10 lg:p-10 lg:px-20 lg:rounded'>
         <div className='p-5 flex flex-col items-center w-full'>
 
-          <h2 className='bg-teal-100 text-center w-full p-2 text-base sm:font-bold h-24 rounded sm:text-lg md:text-xl flex items-center justify-center lg:text-2xl'>{texto} </h2>
+          <h2 className='bg-teal-100 text-center w-full p-2 text-base   font-bold h-28 border-4 border-teal-200 rounded sm:text-lg md:text-xl flex items-center justify-center lg:text-2xl'>{texto} </h2>
           <div className='font-normal my-5'>
           {!datos.variacion
             ? <p className='text-xs  pb-0 mb-0 md:text-sm'>Los siguientes cálculos ser realizaron suponiendo que la inflación mensual se mantiene  <b className='text-emerald-600'>constante.</b></p>

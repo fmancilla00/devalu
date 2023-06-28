@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { IoCaretForwardOutline } from "react-icons/io5";
+import { useRef } from 'react'
 
 
 
@@ -14,9 +15,15 @@ export default function MainForm({ variacion, inflacion }) {
   const sinDato = 'Tenés que ingresar un precio'
   const navigate = useNavigate();
 
+  const top = useRef();
+
   let select = watch('cuotas')
 
   const procesarDatos = data => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Opciones: 'auto', 'smooth'
+    });
     navigate('/resultados', {
       state: {
         datos: data,
@@ -57,7 +64,7 @@ export default function MainForm({ variacion, inflacion }) {
   }
 
   return (
-    <form className='text-xs font-medium p-2 flex flex-col items-center lg:text-sm' autoComplete='off' onSubmit={handleSubmit(procesarDatos)}>
+    <form ref={top} className='text-xs font-medium p-2 flex flex-col items-center lg:text-sm' autoComplete='off' onSubmit={handleSubmit(procesarDatos)}>
       <div className='flex flex-col justify-between items-center lg:flex-row lg:w-full lg:gap-4'>
         <label className=' flex flex-col relative items-center justify-center lg:w-80'>
           <div className=' flex flex-col justify-start items-center'>
