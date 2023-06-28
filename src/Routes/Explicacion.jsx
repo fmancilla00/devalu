@@ -5,7 +5,7 @@ import { IoCaretBackOutline } from "react-icons/io5";
 export default function Explicacion() {
   return (
     <div className='flex flex-col items-center justify-center w-full min-h-screen'>
-      <div className='drop-shadow-2xl text-teal-950 md:px-15 lg:rounded-lg sm:rounded-md bg-neutral-50 w-full sm:min-h-0 sm:w-[80%] xl:w-[80%]  min-h-screen  xl:h-[95%] flex flex-col items-center justify-start md:my-5 lg:my-10'>
+      <div className='drop-shadow-2xl text-teal-950 md:px-15 lg:rounded-lg sm:rounded-md bg-neutral-50 w-full sm:min-h-0 sm:w-[80%] xl:w-[65%] xl:p-10 min-h-screen xl:h-[95%] flex flex-col items-center justify-start md:my-5 lg:my-10'>
               <h2 className='w-full px-5 pt-8  text-xl lg:text-3xl'>¿Cómo se calcula?</h2>
         <section className='w-full p-5'>
           <article className='py-2 border-y-2 border-teal-300'>
@@ -21,7 +21,7 @@ export default function Explicacion() {
                     <p className='my-4 text-xs font-normal lg:text-sm'>
                         Si tenemos los siguientes datos:
                     </p>
-                    <ul className='list-disc list-inside bg-teal-100 rounded m-1 p-1 flex flex-col justify-center items-center my-4 text-xs  font-normal w-full max-w-sm'>
+                    <ul className='list-disc list-inside border-2 border-teal-400 rounded m-1 p-1 flex flex-col justify-center items-center my-4 text-xs  font-normal w-full max-w-sm bg-teal-100'>
                         <li className='text-[12px] lg:text-xs flex justify-between items center w-[70%]'><span>Inflación mensual:</span> <b className='text-emerald-600 text-start  w-[30%]'>20%</b></li>
                         <li className=' text-[12px] lg:text-xs flex justify-between items center w-[70%]'><span>Cantidad de cuotas:</span> <b className='text-emerald-600 w-[30%]'>2</b></li>
                         <li className=' text-[12px] lg:text-xs flex justify-between items center w-[70%] '><span>Valor de cada cuota:</span> <b className='text-emerald-600 w-[30%]'>$4200.00</b></li>
@@ -29,8 +29,8 @@ export default function Explicacion() {
                     <p className='my-4 text-xs font-normal lg:text-sm'>
                         Podremos entonces calcular:
                     </p>
-                    <div className='list-disc list-inside bg-teal-100 rounded m-1 p-1 flex flex-col justify-center items-center my-4 text-xs font-normal w-full gap-2 py-5 lg:flex-row lg:text-sm'>
-                      <div className='flex gap-1 flex-col justify-center items-center text-center border-2 w-52 rounded  border-teal-200'>
+                    <div className='list-disc list-inside bg-teal-100 border-2 border-teal-400 rounded m-1 p-1 flex flex-col justify-center items-center my-4 text-xs font-normal w-full gap-2 py-5 lg:flex-row lg:text-sm'>
+                      <div className='flex gap-1 flex-col justify-center items-center text-center border-2 w-52 rounded  border-teal-200 bg-neutral-50'>
                         <h6 className='text-center border-b-teal-400 border-b p-1 w-24'>
                           Cuota 1:
                         </h6>
@@ -44,7 +44,7 @@ export default function Explicacion() {
                         
               </div>
                       <span> + </span>
-                    <div className='flex gap-1 flex-col justify-center items-center text-center border-2 w-52 rounded  border-teal-200'>
+                    <div className='flex gap-1 flex-col justify-center items-center text-center border-2 w-52 rounded  border-teal-200 bg-neutral-50'>
                         <h6 className='text-center border-b-teal-400 border-b p-1 w-24'>
                           Cuota 2:
                         </h6>
@@ -58,7 +58,7 @@ export default function Explicacion() {
                         
               </div>
               <span>=</span>
-                      <div className='flex gap-1 flex-col justify-center items-center text-center border-2 w-52 rounded  border-teal-200'>
+                      <div className='flex gap-1 flex-col justify-center items-center text-center border-2 w-52 rounded  border-teal-200 bg-neutral-50'>
                         <h6 className='text-center border-b-teal-400 border-b p-1 w-36'>
                           Precio ajustado:
                         </h6>
@@ -73,7 +73,7 @@ export default function Explicacion() {
                     </div>
           </article>
           
-          <article className='my-10 border-t-2 border-teal-300'>
+          <article className='my-10 border-y-2 border-teal-300'>
             <p className='my-5 text-xs font-normal lg:text-sm'>
                       También tenés la opción de calcularlo con una inflación mensual <b className='text-emerald-600'>variable</b>. Esta se estima mediante los datos de variación de un mes a otro durante los últimos doce meses.
             </p>
@@ -82,7 +82,7 @@ export default function Explicacion() {
               Tomando los siguientes datos:
             </p>
 
-            <ul className='list-disc list-inside bg-teal-100 rounded m-1 p-1 flex flex-col justify-center items-center my-4 text-xs font-normal w-full max-w-sm'>
+            <ul className='list-disc list-inside bg-teal-100 border-2 border-teal-400 rounded m-1 p-1 flex flex-col justify-center items-center my-4 text-xs font-normal w-full max-w-sm'>
               <li className='text-[12px] lg:text-xs flex justify-between items center w-[70%]'><span>Inflación mensual:</span> <b className='text-emerald-600 text-start  w-[30%]'>20%</b></li>
               <li className='text-[12px] lg:text-xs flex justify-between items center w-[70%]'><span>Variación mensual: </span> <b className='text-emerald-600 text-start  w-[30%]'>5%</b></li>
               <li className=' text-[12px] flex justify-between items center w-[70%]'><span>Cantidad de cuotas:</span> <b className='text-emerald-600 w-[30%]'>2</b></li>
@@ -93,8 +93,8 @@ export default function Explicacion() {
               Ahora podemos calcular: 
             </p>
 
-            <div className='list-disc list-inside bg-teal-100 rounded m-1 p-1 flex flex-col justify-center items-center my-4 text-xs font-normal w-full gap-2 py-5 lg:flex-row lg:text-sm'>
-                      <div className='flex gap-1 flex-col justify-center items-center text-center border-2 w-52 rounded  border-teal-200'>
+            <div className='list-disc list-inside bg-teal-100 rounded m-1 p-1 flex flex-col justify-center items-center my-4 text-xs font-normal w-full gap-2 py-5 lg:flex-row lg:text-sm border-2 border-teal-400'>
+                      <div className='flex gap-1 flex-col justify-center items-center text-center border-2 w-52 rounded  border-teal-200 bg-neutral-50'>
                         <h6 className='text-center border-b-teal-400 border-b p-1 w-24'>
                           Cuota 1:
                         </h6>
@@ -108,7 +108,7 @@ export default function Explicacion() {
                         
               </div>
                       <span> + </span>
-                    <div className='flex gap-1 flex-col justify-center items-center text-center border-2 w-52 rounded  border-teal-200'>
+                    <div className='flex gap-1 flex-col justify-center items-center text-center border-2 w-52 rounded  border-teal-200 bg-neutral-50'>
                         <h6 className='text-center border-b-teal-400 border-b p-1 w-24'>
                           Cuota 2:
                         </h6>
@@ -122,7 +122,7 @@ export default function Explicacion() {
                         
               </div>
               <span>=</span>
-                      <div className='flex gap-1 flex-col justify-center items-center text-center border-2 w-52 rounded  border-teal-200'>
+                      <div className='flex gap-1 flex-col justify-center items-center text-center border-2 w-52 rounded  border-teal-200 bg-neutral-50'>
                         <h6 className='text-center border-b-teal-400 border-b p-1 w-36'>
                           Precio ajustado:
                         </h6>

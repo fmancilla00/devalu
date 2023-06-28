@@ -10,13 +10,12 @@ export default function Main() {
   const { variacion, IPC, loading, error } = useFetch(url)
   const defaultVal = { valor: 0.078, fechaFormateada: 'Mayo 2023' }
   return (
-    <div className='flex flex-col items-center justify-center w-screen min-h-screen'>
-      <div className='drop-shadow-2xl text-teal-950 md:px-20 lg:rounded-lg sm:rounded-md bg-neutral-50 w-full sm:min-h-0 sm:w-[80%] xl:w-[60%]  min-h-screen  xl:h-[95%] flex flex-col items-center justify-center'>
+    <div className='flex flex-col items-center justify-center w-full min-h-screen'>
+      <div className='drop-shadow-2xl text-teal-950 md:px-15 lg:rounded-lg sm:rounded-md bg-neutral-50 w-screen lg:w-[80%]  min-h-screen lg:min-h-0 flex flex-col items-center justify-start lg:my-10'>
         <div className='flex items center flex-col justify-center w-full lg:h-full lg:p-5'>
-          <section className=' sm:w-72 my-5 w-72 lg:w-full border-4 border-teal-200 p-1  mx-auto bg-teal-100 rounded-lg flex items-center justify-around gap-3 text-xs lg:text-base font-medium h-fit lg:justify-around'>
-            <img src={logo} alt="" className='w-20 h-20 rounded-full border-4 border-teal-700 lg:w-28 lg:h-28' />
-            <div className='  rounded p-2 w-[60%]'>
-              <h1 className='uppercase font-bold text-3xl lg:text-5xl titulo'>Devalú</h1>
+          <section className='mt-10 relative sm:w-72 my-5 w-72 lg:w-full border-4 border-teal-200 p-1  mx-auto rounded-lg flex items-center justify-around gap-3 text-xs lg:text-base font-medium h-fit lg:justify-around'>
+              <h1 className='absolute bottom-[90px] lg:bottom-[86px] bg-neutral-50 px-2 uppercase font-bold text-3xl lg:text-4xl  titulo'>Devalu</h1>
+            <div className='text-center  rounded p-2 pt-5'>
               <p className=' text-teal-800'>Ingresá los valores y calculá cómo te conviene comprar:</p>
               <p className='text-sm lg:text-lg my-1 font-semibold text-teal-800'>¿En <b className='text-orange-400'>cuotas</b> o al <b className='text-orange-400'>contado</b>?</p>
             </div>
