@@ -13,6 +13,13 @@ export default function Results() {
   const [cuotasArr, setCuotasArr] = useState([]) 
   const [texto, setTexto] = useState('')
 
+  const scrollUp = () => { 
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Opciones: 'auto', 'smooth'
+    });
+  }
+
   useEffect(() => { 
     
     if (datos.variacion) {
@@ -101,7 +108,7 @@ export default function Results() {
             </div>
           <footer className='flex flex-col items-center justify-center'>
             <Link className=' flex items-center justify-center gap-2 rounded p-2 w-full text-center mt-10 hover:bg-teal-800 transition bg-teal-700 text-sm text-white font-bold tracking-widest uppercase' to="/"><IoCaretBackOutline/> Volver</Link>
-            <Link to='/explicacion' className='m-5 mb-0 text-sm underline underline-offset-4 hover:font-medium transition'>¿Cómo funciona?</Link>
+            <Link onClick={scrollUp} to='/explicacion' className='m-5 mb-0 text-sm underline underline-offset-4 hover:font-medium transition'>¿Cómo funciona?</Link>
           </footer>
         </div>
       </div>

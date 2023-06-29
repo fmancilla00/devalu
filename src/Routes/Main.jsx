@@ -8,6 +8,14 @@ export default function Main() {
   const url = 'https://apis.datos.gob.ar/series/api/series/?ids=173.1_INUCLEOLEO_DIC-_0_10&format=json'
   const { variacion, IPC, loading, error } = useFetch(url)
   const defaultVal = { valor: 0.078, fechaFormateada: 'Mayo 2023' }
+
+  const scrollUp = () => { 
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Opciones: 'auto', 'smooth'
+    });
+  }
+
   return (
     <div className='flex flex-col items-center justify-center w-full min-h-screen'>
       <div className='drop-shadow-2xl text-teal-950 md:px-15 lg:rounded-lg sm:rounded-md bg-neutral-50 w-screen lg:w-[80%]  min-h-screen lg:min-h-0 flex flex-col items-center justify-start lg:my-10'>
@@ -26,7 +34,7 @@ export default function Main() {
           }
           {loading ? <Loading /> : <MainForm variacion={error ? 0 : variacion} inflacion={error ? defaultVal : IPC} />}
       <footer className='w-100'>
-        <Link to='/explicacion' className='my-2 mb-4 text-center flex justify-center items-center underline underline-offset-4 hover:font-medium transition text-xs sm:my-2 sm:mb-4'>¿Cómo funciona?</Link>
+            <Link onClick={scrollUp} to='/explicacion' className='my-2 mb-4 text-center flex justify-center items-center underline underline-offset-4 hover:font-medium transition text-xs sm:my-2 sm:mb-4'>¿Cómo se calcula?</Link>
       </footer>
       </div>
       </div>
