@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useFetch } from '../Hooks/useFetch.js'
 import MainForm from '../Components/MainForm.jsx';
 import Loading from '../Components/Loading.jsx';
-import logo from '../../public/logotipo.jpeg'
 import { Link } from 'react-router-dom';
 
 export default function Main() {

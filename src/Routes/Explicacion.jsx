@@ -9,12 +9,9 @@ export default function Explicacion() {
               <h2 className='w-full px-5 pt-8  text-xl lg:text-3xl'>¿Cómo se calcula?</h2>
         <section className='w-full p-5'>
           <article className='py-2 border-y-2 border-teal-300'>
-                  <p className='my-1  text-xs font-normal lg:text-sm'>
-                      Si tenemos en cuenta que el objetivo es actualizar el valor de cada cuota para que refleje su equivalente en la actualidad, podemos entonces decsontarle a cada una de ellas la inflación mensual <b className='text-emerald-600'>acumulada</b> correspondiente.
-                  </p>
-                  <p className='my-4 text-xs font-normal lg:text-sm'>
-                      Una vez hecho esto vamos a realizar la suma de todas estas cuotas para así obtener lo que llamaremos <b className='text-emerald-600'>"precio ajustado"</b>. Por último, se comparará el precio al contado con el precio ajustado y se arrojará un resultado.
-                  </p>
+            <p className='my-4 text-xs font-normal lg:text-sm'>
+              Para calcular qué te conviene, a cada cuota le descontamos la inflación mensual acumulada hasta ese mes. Luego realizamos la sumatoria de todas ellas y obtenemos así el llamado <b className='text-emerald-600'>"precio ajustado"</b>. Este precio se compara con el precio al contado para determinar un resultado.  
+            </p>
           </article>
           <article>
             <h3 className='w-full pt-3 text-lg lg:text-xl'>Pongamos algunos ejemplos</h3>
